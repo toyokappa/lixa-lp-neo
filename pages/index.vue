@@ -1,5 +1,5 @@
 <template lang="pug">
-parts-cta-btn-red
+sections-hero
 parts-cta-btn-green
 sections-gym-info
 </template>

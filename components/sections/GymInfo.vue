@@ -1,5 +1,5 @@
 <template lang="pug">
-#gymInfo
+section#gymInfo
   .container.py-3
     .section-title.text-center.mb-3 店舗情報
     .title 営業時間
