@@ -99,9 +99,6 @@
         bottom: 10px
         left: 50%
         transform: translateX(-50%)
-        p
-          padding: 0
-          margin: 0
   .btn-box
     width: 350px
     padding: 45px 0 20px

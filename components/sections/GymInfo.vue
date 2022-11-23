@@ -22,10 +22,6 @@ section#gymInfo
     font-weight: bold
   .title
     font-weight: bold
-  .content
-    p
-      padding: 0
-      margin: 0
   .caption
     font-size: 12px
   .map
