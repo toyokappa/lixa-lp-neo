@@ -1,5 +1,6 @@
 <template lang="pug">
-PartsGlobalHeader
+parts-global-header
+parts-global-footer
 </template>
 
 <style lang="sass">

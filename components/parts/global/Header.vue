@@ -1,6 +1,6 @@
 <template lang="pug">
-header.header-nav.navbar.fixed-top
-  nav
+header.header-nav.navbar
+  nav.container
     .navbar-bland.logo LIXA
 </template>
 
