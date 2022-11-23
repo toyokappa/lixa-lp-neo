@@ -1,3 +1,3 @@
 <template lang="pug">
-div aaa
+sections-gym-info
 </template>
