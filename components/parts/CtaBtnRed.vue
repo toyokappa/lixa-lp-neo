@@ -60,7 +60,7 @@
       .second-text
         font-size: 14px
         font-weight: bold
-        text-shadow: 1px 1px 0 #FFF, -1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px -1px 0 #FFF, 0px 1px 0 #FFF,  0-1px 0 #FFF, -1px 0 0 #FFF, 1px 0 0 #FFF
+        text-shadow: $text-border-white
         position: absolute
         top: 70px
         right: 50%
