@@ -37,7 +37,7 @@ const { stepList } = constants
 #trial
   text-align: center
   letter-spacing: 0.05em
-  padding: 30px 0
+  padding: 30px 0 20px
   .step-section
     margin-bottom: 40px
   .campaign-section
