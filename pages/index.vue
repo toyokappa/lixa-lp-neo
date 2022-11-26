@@ -7,5 +7,6 @@ sections-user-voice
 parts-cta-btn-green
 sections-diet
 parts-cta-btn-green
+sections-program
 sections-gym-info
 </template>
