@@ -1,6 +1,8 @@
 <template lang="pug">
 .cta-btn-tel
-  .btn-area
+  a.btn-area(
+    href="tel:08070048979"
+  )
     .btn-text
       .first-text
         div
@@ -21,6 +23,9 @@
   text-align: center
   letter-spacing: 0.05em
   .btn-area
+    display: block
+    color: inherit
+    text-decoration: none
     width: 340px
     height: 110px
     background: $red-gradient

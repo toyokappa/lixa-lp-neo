@@ -1,6 +1,6 @@
 <template lang="pug">
 .cta-btn-red
-  .btn-area
+  nuxt-link.btn-area(to="/reserve")
     .btn-text
       .first-text
         div
@@ -24,8 +24,10 @@
   text-align: center
   letter-spacing: 0.05em
   .btn-area
+    display: block
     width: 340px
     height: 110px
+    color: inherit
     background: $red-gradient
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
     border-radius: 10px

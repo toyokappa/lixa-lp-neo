@@ -1,6 +1,10 @@
 <template lang="pug">
 .cta-btn-line
-  .btn-area
+  a.btn-area(
+    href="https://lin.ee/74XW3Em"
+    target="_blank"
+    rel="noopener"
+  )
     .btn-text
       .first-text
         div
@@ -21,6 +25,9 @@
   text-align: center
   letter-spacing: 0.05em
   .btn-area
+    display: block
+    color: inherit
+    text-decoration: none
     width: 340px
     height: 110px
     background: $green-gradient

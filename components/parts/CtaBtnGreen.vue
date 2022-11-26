@@ -30,7 +30,7 @@
           span.emphasis-orange LIXAの良さ
         p がわかる
   .btn-box
-    .btn-area.mb-3
+    nuxt-link.btn-area.mb-3(to="/reserve")
       .first-text
         span.emphasis-yellow 無料体験
         span の
@@ -108,6 +108,9 @@
     filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25))
     z-index: 1
     .btn-area
+      display: block
+      color: inherit
+      text-decoration: none
       background: $green-gradient
       width: 320px
       padding: 5px
