@@ -5,7 +5,9 @@ section#reserveForm
     .reserve-description
       p フォームでのお申込み後に担当より
       p 体験日時の調整のご連絡を差し上げます。
-    form
+    form(
+      @submit.prevent="sendMail"
+    )
       .mb-4
         label.form-label(for="reserveName")
           span.me-2 お名前
@@ -31,6 +33,8 @@ section#reserveForm
       .mb-4
         label.form-label(for="reserveMessage") ご質問など
         textarea#reserveMessage.form-control(
+          v-model="message"
+          name="message"
           rows="5"
         )
       .mb-4
@@ -86,6 +90,60 @@ configure({
     },
   }),
 })
+
+const $config = useRuntimeConfig()
+const $router = useRouter()
+
+const sendMail = async () => {
+  // loading
+  const text = `
+以下の内容でホームページより無料体験申込を受け付けました。
+入力いただいた内容をもとに担当からご連絡いたしますので今しばらくお待ち下さい。
+
+---
+# お名前
+${name.value} 様
+
+# メールアドレス
+${email.value}
+
+# ご質問など
+${message.value || ''}
+---
+
+引き続き${$config.public.projectName}をよろしくお願いいたします！
+
+※ こちらのメールへの返信は受け付けておりません。
+
+====================================
+
+# ${$config.public.projectName} 公式サイト
+https://${$config.public.domain}
+
+====================================
+`
+  const formData = new FormData()
+  formData.append('from', `${$config.public.projectName} 無料体験申込みフォーム <info@${$config.public.host}>`)
+  //@ts-ignore
+  formData.append('to', email.value)
+  formData.append('bcc', $config.public.mailBcc)
+  formData.append('subject', $config.public.projectName)
+  formData.append('text', text)
+  try {
+    const url = `https://api.mailgun.net/v3/mg.${$config.public.host}/messages`
+    const res = await $fetch(url, {
+      method: 'POST',
+      body: formData,
+      headers: { Authorization: 'Basic ' + btoa(`api:${$config.public.mailgunKey}`) }
+    })
+    $router.push("/reserve/complete")
+  } catch (err) {
+    // 失敗トースターを表示
+    throw err
+  } finally {
+    // ローディング終了
+  }
+}
 
 </script>
 
