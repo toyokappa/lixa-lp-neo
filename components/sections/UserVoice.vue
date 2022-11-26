@@ -1,5 +1,6 @@
 <template lang="pug">
-parts-gold-title 体験者の声
+parts-gold-title
+  .emphasis-md 体験者の声
 section#userVoice
   .container
     .row.g-4
@@ -30,6 +31,8 @@ section#userVoice
 </template>
 
 <style lang="sass" scoped>
+.emphasis-md
+  font-size: 20px
 #userVoice
   letter-spacing: 0.05em
   background-color: $dark-color

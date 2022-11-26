@@ -8,5 +8,6 @@ parts-cta-btn-green
 sections-diet
 parts-cta-btn-green
 sections-program
+sections-trial
 sections-gym-info
 </template>
