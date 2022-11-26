@@ -108,7 +108,7 @@
     filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25))
     z-index: 1
     .btn-area
-      background: linear-gradient(180deg, #9FF05F 0%, #1BAC3B 33.33%)
+      background: $green-gradient
       width: 320px
       padding: 5px
       border-radius: 36px

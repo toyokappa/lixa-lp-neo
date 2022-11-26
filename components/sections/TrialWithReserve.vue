@@ -1,9 +1,13 @@
 <template lang="pug">
 parts-gold-title
-  p.caption その前に、あなたの人生を変える
+  p.caption あなたの人生を変える
   p.emphasis-md 無料体験のご案内
 section#trial
-  .emphasis-md.mb-2 無料体験では何をやる？
+  .container.campaign-section
+    parts-campaign-card
+  .emphasis-md.mb-2
+    span.emphasis-red LIXA
+    span は無料でここまでできます！
   .caption.mb-2 60分間で下記の3ステップを体験いただきます。
   .container.step-section
     parts-step-card(
@@ -12,9 +16,8 @@ section#trial
       :stepNumber="step.number"
       :stepTexts="step.texts"
     )
-  .container.campaign-section
-    parts-campaign-card
-  parts-cta-btn-red
+  parts-cta-btn-line.mb-5
+  parts-cta-btn-tel
 </template>
 
 <script setup lang="ts">
@@ -29,14 +32,14 @@ const { stepList } = constants
 .emphasis-md
   font-size: 20px
   font-weight: bold
-.emphasis-lg
-  font-size: 36px
+.emphasis-red
+  color: $accent-color
 #trial
   text-align: center
   letter-spacing: 0.05em
   padding: 30px 0
   .step-section
-    margin-bottom: 30px
-  .campaign-section
     margin-bottom: 40px
+  .campaign-section
+    margin-bottom: 30px
 </style>

@@ -1,11 +1,11 @@
 <template lang="pug">
-.cta-btn-red
+.cta-btn-tel
   .btn-area
     .btn-text
       .first-text
         div
-          span.emphasis-lg 無料体験
-          span に
+          span.emphasis-lg お電話
+          span で
         div
           span 申し込む
       .second-text
@@ -14,13 +14,10 @@
           div
             span.emphasis-md 30
             span 秒で完了！
-    .instructor-photo
-  .bubble-area
-    .bubble-text 無理な勧誘は一切ナシ！相談だけでもOK！
 </template>
 
 <style lang="sass" scoped>
-.cta-btn-red
+.cta-btn-tel
   text-align: center
   letter-spacing: 0.05em
   .btn-area
@@ -65,43 +62,4 @@
         top: 70px
         right: 50%
         transform: translateX(50%)
-    .instructor-photo
-      width: 70px
-      height: 70px
-      background-color: $base-grey
-      border: 3px solid $accent-color
-      border-radius: 50%
-      position: absolute
-      bottom: -8px
-      left: -8px
-  .bubble-area
-    font-size: 15px
-    font-weight: bold
-    display: inline-block
-    padding: 5px 10px
-    border: 2px solid black
-    border-radius: 10px
-    margin: 20px 0 0
-    position: relative
-    &:before, &:after
-      border: solid transparent
-      position: absolute
-      bottom: 100%
-      content: ""
-    &:before
-      left: 16px
-      border-top-width: 6px
-      border-bottom-width: 6px
-      border-left-width: 3px
-      border-right-width: 3px
-      border-bottom-color: white
-      z-index: 2
-    &:after
-      left: 14px
-      border-top-width: 10px
-      border-bottom-width: 10px
-      border-left-width: 5px
-      border-right-width: 5px
-      border-bottom-color: black
-      z-index: 1
 </style>
