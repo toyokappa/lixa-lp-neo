@@ -95,7 +95,6 @@ configure({
 
 const $config = useRuntimeConfig()
 const $router = useRouter()
-const $nuxtApp = useNuxtApp()
 const toaster = createToaster()
 
 const sendMail = async () => {
