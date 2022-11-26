@@ -62,6 +62,8 @@ section#reserveForm
 <script setup lang="ts">
 import { useField, useForm, configure } from "vee-validate"
 import { localize } from "@vee-validate/i18n"
+// @ts-ignore
+import { createToaster } from "@meforma/vue-toaster"
 
 const { meta } = useForm()
 const { value: name, errorMessage: nameError } = useField(
@@ -93,6 +95,8 @@ configure({
 
 const $config = useRuntimeConfig()
 const $router = useRouter()
+const $nuxtApp = useNuxtApp()
+const toaster = createToaster()
 
 const sendMail = async () => {
   // loading
@@ -131,14 +135,14 @@ https://${$config.public.domain}
   formData.append('text', text)
   try {
     const url = `https://api.mailgun.net/v3/mg.${$config.public.host}/messages`
-    const res = await $fetch(url, {
+    await $fetch(url, {
       method: 'POST',
       body: formData,
       headers: { Authorization: 'Basic ' + btoa(`api:${$config.public.mailgunKey}`) }
     })
     $router.push("/reserve/complete")
   } catch (err) {
-    // 失敗トースターを表示
+    toaster.show('申し込み中にエラーが発生しました。もう一度お試しください。', { type: 'error ' })
     throw err
   } finally {
     // ローディング終了
