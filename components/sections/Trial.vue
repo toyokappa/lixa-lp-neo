@@ -34,19 +34,7 @@ section#trial
           p トレーニングを行い
           p LIXAの良さを体感
   .container.campaign-section
-    .campaign-card
-      .campaign-card-text
-        p.emphasis-md.mb-2 LIXAグランドオープン記念！
-        p
-          span.emphasis-md 2022
-          span 年
-          span.emphasis-md 12
-          span 月末までに
-        p 無料体験ご参加の方へ
-        p.emphasis-md
-          span もれなく入会金が
-          span.emphasis-lg 0
-          span 円に！
+    parts-campaign-card
   parts-cta-btn-red
 </template>
 
