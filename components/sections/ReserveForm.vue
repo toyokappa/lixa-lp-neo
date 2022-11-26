@@ -2,6 +2,9 @@
 section#reserveForm
   parts-cta-section-blue
   .container
+    .reserve-description
+      p フォームでのお申込み後に担当より
+      p 体験日時の調整のご連絡を差し上げます。
     form
       .mb-4
         label.form-label(for="reserveName")
@@ -25,109 +28,6 @@ section#reserveForm
           :class="{ 'is-invalid': emailError }"
         )
         .invalid-feedback(v-if="emailError") {{ emailError }}
-      .mb-4
-        label.form-label(for="reserveDate1")
-          span.me-2 体験希望日時
-          span.badge.bg-original 必須
-        .input-group.mb-2
-          select.form-select(
-            v-model="date1Month"
-            name="date1Month"
-            :class="{ 'is-invalid': monthError }"
-          )
-            option(
-              v-for="month in months"
-              :key="month + '月'"
-              :value="month"
-            ) {{ month }}
-          span.input-group-text 月
-          select.form-select(
-            v-model="date1Day"
-            name="date1Day"
-            :class="{ 'is-invalid': dayError }"
-          )
-            option(
-              v-for="day in days"
-              :key="day + '日'"
-              :value="day"
-            ) {{ day }}
-          span.input-group-text 日
-          select.form-select(
-            v-model="date1Hour"
-            name="date1Hour"
-            :class="{ 'is-invalid': hourError }"
-          )
-            option(
-              v-for="hour in hours"
-              :key="hour + '時'"
-              :value="hour"
-            ) {{ hour }}
-          span.input-group-text 時
-        .invalid-feedback(v-if="monthError") {{ monthError }}
-        .invalid-feedback(v-if="dayError") {{ dayError }}
-        .invalid-feedback(v-if="hourError") {{ hourError }}
-        .input-group.mb-2
-          select.form-select(
-            v-model="date2Month"
-            name="date2Month"
-          )
-            option(
-              v-for="month in months"
-              :key="month + '月'"
-              :value="month"
-            ) {{ month }}
-          span.input-group-text 月
-          select.form-select(
-            v-model="date2Day"
-            name="date2Day"
-          )
-            option(
-              v-for="day in days"
-              :key="day + '日'"
-              :value="day"
-            ) {{ day }}
-          span.input-group-text 日
-          select.form-select(
-            v-model="date2Hour"
-            name="date2Hour"
-          )
-            option(
-              v-for="hour in hours"
-              :key="hour + '時'"
-              :value="hour"
-            ) {{ hour }}
-          span.input-group-text 時
-        .input-group.mb-2
-          select.form-select(
-            v-model="date3Month"
-            name="date3Month"
-          )
-            option(
-              v-for="month in months"
-              :key="month + '月'"
-              :value="month"
-            ) {{ month }}
-          span.input-group-text 月
-          select.form-select(
-            v-model="date3Day"
-            name="date3Day"
-          )
-            option(
-              v-for="day in days"
-              :key="day + '日'"
-              :value="day"
-            ) {{ day }}
-          span.input-group-text 日
-          select.form-select(
-            v-model="date3Hour"
-            name="date3Hour"
-          )
-            option(
-              v-for="hour in hours"
-              :key="hour + '時'"
-              :value="hour"
-            ) {{ hour }}
-          span.input-group-text 時
       .mb-4
         label.form-label(for="reserveMessage") ご質問など
         textarea#reserveMessage.form-control(
@@ -159,10 +59,6 @@ section#reserveForm
 import { useField, useForm, configure } from "vee-validate"
 import { localize } from "@vee-validate/i18n"
 
-const months = Array.from(Array(12).keys(), x => x + 1)
-const days = Array.from(Array(31).keys(), x => x + 1)
-const hours = Array.from(Array(16).keys(), x => x + 7)
-
 const { meta } = useForm()
 const { value: name, errorMessage: nameError } = useField(
   "name",
@@ -172,24 +68,6 @@ const { value: email, errorMessage: emailError } = useField(
   "email",
   "required|email",
 )
-const { value: date1Month, errorMessage: monthError } = useField(
-  "date1.month",
-  "required",
-)
-const { value: date1Day, errorMessage: dayError } = useField(
-  "date1.day",
-  "required",
-)
-const { value: date1Hour, errorMessage: hourError } = useField(
-  "date1.hour",
-  "required",
-)
-const { value: date2Month } = useField("date2.month")
-const { value: date2Day } = useField("date2.day")
-const { value: date2Hour } = useField("date2.hour")
-const { value: date3Month } = useField("date3.month")
-const { value: date3Day } = useField("date3.day")
-const { value: date3Hour } = useField("date3.hour")
 const { value: message } = useField("message")
 const { value: policy, errorMessage: policyError } = useField(
   "policy",
@@ -202,9 +80,6 @@ configure({
       names: {
         name: 'お名前',
         email: 'メールアドレス',
-        'date1.month': '第一希望の月',
-        'date1.day': '第一希望の日',
-        'date1.hour': '第一希望の時間',
         message: 'ご質問など',
         policy: 'プライバシーポリシーへの同意'
       }
@@ -219,6 +94,9 @@ configure({
   padding: 30px 0
   .bg-original
     background-color: $accent-color
+  .reserve-description
+    text-align: center
+    margin-bottom: 20px
   .policy-link
     color: $accent-color
     text-decoration: none
