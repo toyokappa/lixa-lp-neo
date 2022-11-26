@@ -1,20 +1,6 @@
 <template lang="pug">
 section#reserveForm
-  .cta-form
-    .section-area
-    .section-text
-      .first-text
-        div
-          span.emphasis-lg フォーム
-          span で
-        div
-          span 申し込む
-      .second-text
-        .d-flex.align-items-center
-          span.emphasis-circle.me-1 簡単
-          div
-            span.emphasis-md 30
-            span 秒で完了！
+  parts-cta-section-blue
   .container
     form
       .mb-4
@@ -23,35 +9,125 @@ section#reserveForm
           span.badge.bg-original 必須
         input#reserveName.form-control(
           type="text"
-          :class="{ 'is-invalid:': false }"
+          v-model="name"
+          name="name"
+          :class="{ 'is-invalid': nameError }"
         )
+        .invalid-feedback(v-if="nameError") {{ nameError }}
       .mb-4
         label.form-label(for="reserveEmail")
           span.me-2 メールアドレス
           span.badge.bg-original 必須
         input#reserveName.form-control(
           type="email"
-          :class="{ 'is-invalid:': false }"
+          v-model="email"
+          name="email"
+          :class="{ 'is-invalid': emailError }"
         )
+        .invalid-feedback(v-if="emailError") {{ emailError }}
       .mb-4
         label.form-label(for="reserveDate1")
           span.me-2 体験希望日時
           span.badge.bg-original 必須
-        input#reserveDate1.form-control.mb-2(
-          type="text"
-          :class="{ 'is-invalid:': false }"
-          placeholder="第1希望日"
-        )
-        input#reserveDate2.form-control.mb-2(
-          type="text"
-          :class="{ 'is-invalid:': false }"
-          placeholder="第2希望日"
-        )
-        input#reserveDate3.form-control(
-          type="text"
-          :class="{ 'is-invalid:': false }"
-          placeholder="第3希望日"
-        )
+        .input-group.mb-2
+          select.form-select(
+            v-model="date1Month"
+            name="date1Month"
+            :class="{ 'is-invalid': monthError }"
+          )
+            option(
+              v-for="month in months"
+              :key="month + '月'"
+              :value="month"
+            ) {{ month }}
+          span.input-group-text 月
+          select.form-select(
+            v-model="date1Day"
+            name="date1Day"
+            :class="{ 'is-invalid': dayError }"
+          )
+            option(
+              v-for="day in days"
+              :key="day + '日'"
+              :value="day"
+            ) {{ day }}
+          span.input-group-text 日
+          select.form-select(
+            v-model="date1Hour"
+            name="date1Hour"
+            :class="{ 'is-invalid': hourError }"
+          )
+            option(
+              v-for="hour in hours"
+              :key="hour + '時'"
+              :value="hour"
+            ) {{ hour }}
+          span.input-group-text 時
+        .invalid-feedback(v-if="monthError") {{ monthError }}
+        .invalid-feedback(v-if="dayError") {{ dayError }}
+        .invalid-feedback(v-if="hourError") {{ hourError }}
+        .input-group.mb-2
+          select.form-select(
+            v-model="date2Month"
+            name="date2Month"
+          )
+            option(
+              v-for="month in months"
+              :key="month + '月'"
+              :value="month"
+            ) {{ month }}
+          span.input-group-text 月
+          select.form-select(
+            v-model="date2Day"
+            name="date2Day"
+          )
+            option(
+              v-for="day in days"
+              :key="day + '日'"
+              :value="day"
+            ) {{ day }}
+          span.input-group-text 日
+          select.form-select(
+            v-model="date2Hour"
+            name="date2Hour"
+          )
+            option(
+              v-for="hour in hours"
+              :key="hour + '時'"
+              :value="hour"
+            ) {{ hour }}
+          span.input-group-text 時
+        .input-group.mb-2
+          select.form-select(
+            v-model="date3Month"
+            name="date3Month"
+          )
+            option(
+              v-for="month in months"
+              :key="month + '月'"
+              :value="month"
+            ) {{ month }}
+          span.input-group-text 月
+          select.form-select(
+            v-model="date3Day"
+            name="date3Day"
+          )
+            option(
+              v-for="day in days"
+              :key="day + '日'"
+              :value="day"
+            ) {{ day }}
+          span.input-group-text 日
+          select.form-select(
+            v-model="date3Hour"
+            name="date3Hour"
+          )
+            option(
+              v-for="hour in hours"
+              :key="hour + '時'"
+              :value="hour"
+            ) {{ hour }}
+          span.input-group-text 時
       .mb-4
         label.form-label(for="reserveMessage") ご質問など
         textarea#reserveMessage.form-control(
@@ -61,7 +137,9 @@ section#reserveForm
         .form-check
           input#reservePolicy.form-check-input(
             type="checkbox"
-            :class="{ 'is-invalid:': false }"
+            v-model="policy"
+            name="policy"
+            :class="{ 'is-invalid': policyError }"
           )
           label.form-check-label(for="reservePolicy")
             a.policy-link(
@@ -70,74 +148,92 @@ section#reserveForm
               rel="noopener"
             ) プライバシーポリシー
             span に同意します。
-      .btn-complete
-        .btn-area 上記の内容で申し込む
+          .invalid-feedback.mb-2(v-if="policyError") {{ policyError }}
+      button.btn-complete(
+        type="submit"
+        :disabled="!meta.valid"
+      ) 上記の内容で申し込む
 </template>
+
+<script setup lang="ts">
+import { useField, useForm, configure } from "vee-validate"
+import { localize } from "@vee-validate/i18n"
+
+const months = Array.from(Array(12).keys(), x => x + 1)
+const days = Array.from(Array(31).keys(), x => x + 1)
+const hours = Array.from(Array(16).keys(), x => x + 7)
+
+const { meta } = useForm()
+const { value: name, errorMessage: nameError } = useField(
+  "name",
+  "required",
+)
+const { value: email, errorMessage: emailError } = useField(
+  "email",
+  "required|email",
+)
+const { value: date1Month, errorMessage: monthError } = useField(
+  "date1.month",
+  "required",
+)
+const { value: date1Day, errorMessage: dayError } = useField(
+  "date1.day",
+  "required",
+)
+const { value: date1Hour, errorMessage: hourError } = useField(
+  "date1.hour",
+  "required",
+)
+const { value: date2Month } = useField("date2.month")
+const { value: date2Day } = useField("date2.day")
+const { value: date2Hour } = useField("date2.hour")
+const { value: date3Month } = useField("date3.month")
+const { value: date3Day } = useField("date3.day")
+const { value: date3Hour } = useField("date3.hour")
+const { value: message } = useField("message")
+const { value: policy, errorMessage: policyError } = useField(
+  "policy",
+  "required",
+)
+
+configure({
+  generateMessage: localize({
+    ja: {
+      names: {
+        name: 'お名前',
+        email: 'メールアドレス',
+        'date1.month': '第一希望の月',
+        'date1.day': '第一希望の日',
+        'date1.hour': '第一希望の時間',
+        message: 'ご質問など',
+        policy: 'プライバシーポリシーへの同意'
+      }
+    },
+  }),
+})
+
+</script>
 
 <style lang="sass" scoped>
 #reserveForm
   padding: 30px 0
   .bg-original
     background-color: $accent-color
-  .cta-form
-    text-align: center
-    letter-spacing: 0.05em
-    margin-bottom: 20px
-    position: relative
-    .section-area
-      width: 100%
-      height: 120px
-      background: linear-gradient(180deg, #A7D5FF 0%, #68B3F9 39.58%)
-      clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)
-      padding: 20px
-      position: relative
-    .section-text
-      .emphasis-lg
-        font-size: 48px
-        color: #ffe0a4
-      .emphasis-md
-        font-size: 24px
-      .emphasis-circle
-        font-size: 12px
-        color: white
-        background-color: black
-        text-shadow: none
-        padding: 4px 6px
-        border-radius: 100%
-        border: 1px white solid
-      .first-text
-        color: white
-        font-size: 24px
-        font-weight: bold
-        line-height: 1.25
-        text-align: center
-        text-shadow: 1px 1px 0 #68B3F9, -1px -1px 0 #68B3F9, -1px 1px 0 #68b3f9, 1px -1px 0 #68b3f9, 0px 1px 0 #68b3f9,  0-1px 0 #68b3f9, -1px 0 0 #68b3f9, 1px 0 0 #68b3f9
-        width: 100%
-        position: absolute
-        top: -20px
-        right: 50%
-        transform: translateX(50%)
-      .second-text
-        font-size: 14px
-        font-weight: bold
-        text-shadow: $text-border-white
-        position: absolute
-        top: 70px
-        right: 50%
-        transform: translateX(50%)
   .policy-link
     color: $accent-color
     text-decoration: none
   .btn-complete
+    font-size: 24px
+    font-weight: bold
     text-align: center
     letter-spacing: 0.05em
-    .btn-area
-      font-size: 24px
-      font-weight: bold
-      color: white
-      background: $green-gradient
-      width: 100%
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
-      border-radius: 10px
-      padding: 10px
+    color: white
+    background: $green-gradient
+    width: 100%
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    border: none
+    border-radius: 10px
+    padding: 10px
+    &:disabled
+      background: lightgrey 
 </style>
