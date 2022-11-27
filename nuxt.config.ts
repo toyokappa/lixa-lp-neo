@@ -29,11 +29,11 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    ctfSpaceId: process.env.CTF_SPACE_ID,
-    ctfEnvId: process.env.CTF_ENV_ID,
-    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
-    ctfCmaAccessToken: process.env.CTF_CMA_ACCESS_TOKEN,
     public: {
+      ctfSpaceId: process.env.CTF_SPACE_ID,
+      ctfEnvId: process.env.CTF_ENV_ID,
+      ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+      ctfCmaAccessToken: process.env.CTF_CMA_ACCESS_TOKEN,
       mailgunKey: process.env.MAILGUN_KEY,
       mailBcc: process.env.MAIL_BCC,
       host,

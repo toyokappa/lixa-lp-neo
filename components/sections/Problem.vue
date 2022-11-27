@@ -143,12 +143,24 @@ section#problem
     margin-bottom: 20px
     .bubble-1
       margin: 0 0 0 10px
+      .bubble-image
+        width: 203px
+        height: auto
     .bubble-2
       margin: -20px 0 0 auto
+      .bubble-image
+        width: 203px
+        height: auto
     .bubble-3
       margin: -20px 0 0 0
+      .bubble-image
+        width: 200px
+        height: auto
     .bubble-4
       margin: 0 10px 0 auto
+      .bubble-image
+        width: 208px
+        height: auto
     .bubble-1, .bubble-2, .bubble-3, .bubble-4
       width: fit-content
       position: relative

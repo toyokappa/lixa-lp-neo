@@ -7,23 +7,26 @@ section#trainers
       span たち
   .container.mb-4
     .trainer-list.row.g-3
-      .col-6
+      .col-6(v-for="trainer in trainers" :key="trainer.sys.id")
         .trainer
-          .name YUKI
-      .col-6
-        .trainer
-          .name HAZUKI
-      .col-6
-        .trainer
-          .name MARIA
-      .col-6
-        .trainer
-          .name MARINA
+          .name {{ trainer.fields.name }}
   h3.cta-text
     p 彼女たちと楽しく
     p トレーニングしませんか？
   parts-cta-btn-red
 </template>
+
+<script setup>
+// ga & gtmの設定
+// 口コミを書く
+
+const nuxtApp = useNuxtApp()
+const trainerRes = await nuxtApp.$ctfCdaClient.getEntries({
+  content_type: 'trainer',
+  order: 'fields.position'
+})
+const trainers = trainerRes.items
+</script>
 
 <style lang="sass" scoped>
 #trainers

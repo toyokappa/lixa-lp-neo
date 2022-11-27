@@ -17,6 +17,7 @@
     "@vee-validate/i18n": "^4.7.3",
     "@vee-validate/rules": "^4.7.3",
     "bootstrap": "^5.2.3",
+    "contentful": "^9.2.13",
     "vee-validate": "^4.7.3"
   }
 }
