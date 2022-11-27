@@ -45,5 +45,10 @@ export default defineNuxtConfig({
       pageTitle,
       description,
     }
+  },
+  router: {
+    options: {
+      strict: true
+    }
   }
 })
