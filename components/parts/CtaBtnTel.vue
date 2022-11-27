@@ -2,6 +2,7 @@
 .cta-btn-tel
   a.btn-area(
     href="tel:08070048979"
+    @click="() => trackBtnClick()"
   )
     .btn-text
       .first-text
@@ -17,6 +18,16 @@
             span.emphasis-md 30
             span 秒で完了！
 </template>
+
+<script setup>
+const trackBtnClick = () => {
+  window.dataLayer = window.dataLayer || []
+  dataLayer.push({
+    'trackReserve': `/reserve/click_tel_button`,
+    'event': 'loadready',
+  })
+}
+</script>
 
 <style lang="sass" scoped>
 .cta-btn-tel

@@ -17,6 +17,7 @@ section#reserveForm
           v-model="name"
           name="name"
           :class="{ 'is-invalid': nameError }"
+          @focus="data.formClicked = true"
         )
         .invalid-feedback(v-if="nameError") {{ nameError }}
       .mb-4
@@ -28,6 +29,7 @@ section#reserveForm
           v-model="email"
           name="email"
           :class="{ 'is-invalid': emailError }"
+          @focus="data.formClicked = true"
         )
         .invalid-feedback(v-if="emailError") {{ emailError }}
       .mb-4
@@ -36,6 +38,7 @@ section#reserveForm
           v-model="message"
           name="message"
           rows="5"
+          @focus="data.formClicked = true"
         )
       .mb-4
         .form-check
@@ -96,6 +99,18 @@ configure({
 const $config = useRuntimeConfig()
 const $router = useRouter()
 const toaster = createToaster()
+const formClicked = ref(false)
+const data = reactive({
+  formClicked
+})
+
+watch(formClicked, () => {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    'trackReserve': '/reserve/input',
+    'event': 'loadready',
+  }) 
+})
 
 const sendMail = async () => {
   // loading

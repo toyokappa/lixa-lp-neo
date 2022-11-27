@@ -34,8 +34,6 @@ section#trainers
 </template>
 
 <script setup>
-// ga & gtmの設定
-// 口コミを書く
 import noTrainerPhoto from "@/assets/images/no_trainer_photo.png"
 
 const nuxtApp = useNuxtApp()

@@ -4,6 +4,7 @@
     href="https://lin.ee/74XW3Em"
     target="_blank"
     rel="noopener"
+    @click="() => trackBtnClick()"
   )
     .btn-text
       .first-text
@@ -19,6 +20,16 @@
             span.emphasis-md 30
             span 秒で完了！
 </template>
+
+<script setup>
+const trackBtnClick = () => {
+  window.dataLayer = window.dataLayer || []
+  dataLayer.push({
+    'trackReserve': `/reserve/click_line_button`,
+    'event': 'loadready',
+  })
+}
+</script>
 
 <style lang="sass" scoped>
 .cta-btn-line
