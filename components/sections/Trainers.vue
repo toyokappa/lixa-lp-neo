@@ -8,17 +8,35 @@ section#trainers
   .container.mb-4
     .trainer-list.row.g-3
       .col-6(v-for="trainer in trainers" :key="trainer.sys.id")
-        .trainer
+        .trainer(@click="showModal(trainer)")
+          img(:src="trainerPhoto(trainer)")
           .name {{ trainer.fields.name }}
   h3.cta-text
     p 彼女たちと楽しく
     p トレーニングしませんか？
   parts-cta-btn-red
+.trainer-modal.modal(v-show="modalVisible")
+  .modal-dialog.modal-lg.modal-dialog-centered
+    .modal-content.overflow-hidden
+      .modal-body.p-0
+        .container-fluid.position-relative(v-if="currentTrainer")
+          .row
+            .col-lg-6.p-0.position-relative
+              img.photo(:src="trainerPhoto(currentTrainer)")
+            .col-lg-6.p-3
+              .name {{ currentTrainer.fields.name }}
+              .title.mb-3 {{ currentTrainer.fields.title }}
+              .profile(v-text="currentTrainer.fields.profile" style="white-space: pre-wrap;")
+          img.close(
+            src="@/assets/images/close.svg"
+            @click="modalVisible = false"
+          )
 </template>
 
 <script setup>
 // ga & gtmの設定
 // 口コミを書く
+import noTrainerPhoto from "@/assets/images/no_trainer_photo.png"
 
 const nuxtApp = useNuxtApp()
 const trainerRes = await nuxtApp.$ctfCdaClient.getEntries({
@@ -26,6 +44,22 @@ const trainerRes = await nuxtApp.$ctfCdaClient.getEntries({
   order: 'fields.position'
 })
 const trainers = trainerRes.items
+
+const modalVisible = ref(false)
+const currentTrainer = ref(null)
+const data = reactive({
+  modalVisible,
+  currentTrainer
+})
+
+const showModal = (trainer) => {
+  data.currentTrainer = trainer
+  data.modalVisible = true
+}
+const trainerPhoto = (trainer) => {
+  return trainer.fields.photo?.fields.file.url || noTrainerPhoto
+}
+
 </script>
 
 <style lang="sass" scoped>
@@ -49,20 +83,45 @@ const trainers = trainerRes.items
       color: $emphasis-yellow
   .trainer-list
     .trainer
-      width: 100%
-      height: 200px
-      background-color: $base-grey
       position: relative
+      img
+        width: 100%
+        height: 200px
+        object-fit: cover
+        object-position: center center
       .name
         font-size: 16px
         font-weight: bold
+        color: white
+        background-color: #000000aa
+        padding: 5px 10px
         position: absolute
-        bottom: 7px
-        left: 14px
+        bottom: 0px
+        left: 0px
   .cta-text
     font-size: 16px
     font-weight: bold
     text-align: center
     line-height: 1.4
     margin-bottom: 30px
+.trainer-modal
+  display: block
+  background-color: #000000da
+  .photo
+    width: 100%
+    height: auto
+  .close
+    width: 30px
+    height: 30px
+
+    position: absolute
+    top: 10px
+    right: 10px
+  .name
+    font-size: 24px
+    font-weight: bold
+  .title
+    font-weight: bold
+  .profile
+    font-size: 14px
 </style>
