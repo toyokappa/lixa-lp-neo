@@ -1,7 +1,7 @@
 <template lang="pug">
 .cta-btn-line
   a.btn-area(
-    href="https://lin.ee/74XW3Em"
+    href="https://lin.ee/8YeaWSz"
     target="_blank"
     rel="noopener"
     @click="() => trackBtnClick()"
