@@ -20,6 +20,8 @@ p
     font-weight: bold
   p
     margin-bottom: 1.5rem
-  li
+  ol li
     margin-bottom: 0.5rem
+  ol ol li
+    list-style-type: lower-roman
 </style>
