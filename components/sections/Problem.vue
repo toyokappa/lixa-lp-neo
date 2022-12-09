@@ -192,4 +192,66 @@ section#problem
       img
         height: 260px
         width: auto
+
+@media screen and (min-width: $pc-width)
+  #problem
+    .emphasis-md
+      font-size: 32px
+    .emphasis-lg
+      font-size: 36px
+    .emphasis-xl
+      font-size: 40px
+      font-weight: bold
+      text-shadow: $text-border-white
+    .section-title
+      font-size: 24px
+    .bubble-problems
+      width: 800px
+      margin: 0 auto
+      .bubble-1, .bubble-2, .bubble-3
+        .bubble-image
+          height: 120px
+        .bubble-text
+          font-size: 24px
+    .but
+      font-size: 48px
+    .bubble-desires
+      width: 800px
+      font-size: 20px
+      margin: 0 auto 20px
+      .bubble-1
+        .bubble-image
+          width: 309px
+      .bubble-2
+        .bubble-image
+          width: 309px
+      .bubble-3
+        .bubble-image
+          width: 300px
+      .bubble-4
+        .bubble-image
+          width: 312px
+      .bubble-1, .bubble-2, .bubble-4
+        .bubble-text
+          top: calc(50% - 18px) // 吹き出し分 - 13px
+      .bubble-3
+        .bubble-text
+          top: calc(50% - 8px) // 吹き出し分 - 8px
+    .desire-men img
+      display: block
+      width: 600px
+      margin: 0 auto 30px
+    .solution
+      text-align: center
+      margin-bottom: 40px
+      .vector-yellow
+        margin: 20px 0
+        img
+          width: 100px
+      .solution-woman
+        height: 220px
+        margin-top: 20px
+        img
+          height: 320px
+          width: auto
 </style>
