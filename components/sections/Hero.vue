@@ -31,4 +31,14 @@ section#hero
       bottom: 0
       .copy-lg
         font-size: 32px
+    @media (min-width: $pc-width)
+      .hero-image
+        height: 640px
+      .main-copy
+        font-size: 36px
+        text-align: left
+        top: 0
+        left: 0
+        .copy-lg
+          font-size: 54px
 </style>
