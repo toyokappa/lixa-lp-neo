@@ -5,9 +5,9 @@ section#trainers
     p.emphasis-md
       span.emphasis-yellow 女子トレーナー
       span たち
-  .container.mb-4
+  .container.mb-4.mb-lg-5
     .trainer-list.row.g-3
-      .col-6(v-for="trainer in trainers" :key="trainer.sys.id")
+      .col-6.col-lg-3(v-for="trainer in trainers" :key="trainer.sys.id")
         .trainer(@click="showModal(trainer)")
           img(:src="trainerPhoto(trainer)")
           .name {{ trainer.fields.name }}
@@ -122,4 +122,22 @@ const trainerPhoto = (trainer) => {
     font-weight: bold
   .profile
     font-size: 14px
+
+@media screen and (min-width: $pc-width)
+  #trainers
+    .section-title
+      font-size: 24px
+      width: 100%
+      padding: 20px
+      margin-bottom: 30px
+      .emphasis-md
+        font-size: 32px
+    .trainer-list
+      .trainer
+        img
+          width: 100%
+          height: 400px
+    .cta-text
+      font-size: 32px
+      margin-bottom: 50px
 </style>
