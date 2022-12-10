@@ -8,21 +8,21 @@ section#feature
       span 女子トレーナーと
       span.emphasis-red 楽しく60分
   .container
-    .feature-section
-      .feature-box
+    .feature-section.row
+      .col-12.col-lg-6.feature-box
         .feature-image
         .feature-title 女子トレーナーが密着指導
-      .feature-detail 所属トレーナーは女子のみ！正しいフォームを密着指導！女子目線でモテるカラダ作りを徹底的にアドバイスします。
-    .feature-section
-      .feature-box
+      .col-12.col-lg-6.feature-detail 所属トレーナーは女子のみ！正しいフォームを密着指導！女子目線でモテるカラダ作りを徹底的にアドバイスします。
+    .feature-section.row
+      .col-12.col-lg-6.feature-box
         .feature-image
         .feature-title 個室なので気にせず通える
-      .feature-detail 予約制の完全個室なのでプライベートな空間で安心してご利用いただけます。感染対策もバッチリなのでご安心ください。
-    .feature-section
-      .feature-box
+      .col-12.col-lg-6.feature-detail 予約制の完全個室なのでプライベートな空間で安心してご利用いただけます。感染対策もバッチリなのでご安心ください。
+    .feature-section.row
+      .col-12.col-lg-6.feature-box
         .feature-image
         .feature-title 初心者向けのプログラムも充実
-      .feature-detail 筋トレを全くやったことがない！という方でも安心して通えるよう、初心者向けのプログラムもご用意しております。
+      .col-12.col-lg-6.feature-detail 筋トレを全くやったことがない！という方でも安心して通えるよう、初心者向けのプログラムもご用意しております。
 </template>
 
 <style lang="sass" scoped>
@@ -56,5 +56,13 @@ section#feature
         color: white
         background-color: $accent-color
         padding: 10px 0
-
+@media screen and (min-width: $pc-width)
+  #feature
+    .section-title
+      font-size: 32px
+      margin-bottom: 30px
+    .feature-section
+      font-size: 18px
+      width: 800px
+      margin: 0 auto 20px
 </style>
