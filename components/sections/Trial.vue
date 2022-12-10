@@ -4,7 +4,7 @@ parts-gold-title
   p.emphasis-md 無料体験のご案内
 section#trial
   .emphasis-md.mb-2 無料体験では何をやる？
-  .caption.mb-2 60分間で下記の3ステップを体験いただきます。
+  .caption.mb-2.mb-lg-4 60分間で下記の3ステップを体験いただきます。
   .container.step-section
     parts-step-card(
       v-for="step in stepList"
@@ -29,8 +29,6 @@ const { stepList } = constants
 .emphasis-md
   font-size: 20px
   font-weight: bold
-.emphasis-lg
-  font-size: 36px
 #trial
   text-align: center
   letter-spacing: 0.05em
@@ -39,4 +37,14 @@ const { stepList } = constants
     margin-bottom: 30px
   .campaign-section
     margin-bottom: 40px
+@media screen and (min-width: $pc-width)
+  .caption
+    font-size: 18px
+  .emphasis-md
+    font-size: 32px
+  #trial
+    .step-section
+      width: 800px
+    .campaign-section
+      margin-bottom: 40px
 </style>

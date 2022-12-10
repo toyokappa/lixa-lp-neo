@@ -27,4 +27,12 @@
     background: $gold-gradient
     background-clip: text
     -webkit-text-fill-color: transparent
+@media screen and (min-width: $pc-width)
+  .campaign-card
+    width: 800px
+    margin: 0 auto
+    .emphasis-md
+      font-size: 28px
+    .emphasis-lg
+      font-size: 48px
 </style>

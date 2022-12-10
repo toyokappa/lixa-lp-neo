@@ -51,4 +51,20 @@ const Props = withDefaults(defineProps<Props>(), {
       font-weight: bold
       text-align: left
       white-space: nowrap
+@media screen and (min-width: $pc-width)
+  .step-card
+    padding: 10px 20px
+    margin-bottom: 20px
+    .step-left
+      position: relative
+      margin-right: 15px
+      .step-number
+        font-size: 20px
+        padding: 18px 5px
+      .step-image
+        width: 320px
+        height: 200px
+    .step-right
+      .step-text
+        font-size: 20px
 </style>
