@@ -60,7 +60,7 @@ section#problem
           span.emphasis-red LIXA
           span の
         p
-          span.emphasis-red 女子トレーナー
+          span.emphasis-red 美女トレーナー
           span たちが解決!!
       .vector-yellow
         img(src="@/assets/images/vector_yellow.png")

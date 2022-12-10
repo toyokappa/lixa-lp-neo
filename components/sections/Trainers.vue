@@ -3,7 +3,7 @@ section#trainers
   h2.section-title
     p アナタとトレーニングを共にする
     p.emphasis-md
-      span.emphasis-yellow 女子トレーナー
+      span.emphasis-yellow 美女トレーナー
       span たち
   .container.mb-4.mb-lg-5
     .trainer-list.row.g-3

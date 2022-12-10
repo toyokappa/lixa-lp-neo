@@ -4,8 +4,8 @@ section#hero
     .hero-image
     h1.main-copy
       div.copy-lg 群馬初！
-      div 女子トレーナーのみ！
-      div 男性専用パーソナルジム
+      div 男性人気No.1！
+      div 美女が教えるパーソナルジム
       div 前橋下石倉にグランドオープン！
   parts-cta-btn-red
 </template>

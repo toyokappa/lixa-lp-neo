@@ -18,7 +18,7 @@ const stepList: object[] = [
   {
     number: 3,
     texts: [
-      "女子トレーナーと実際の",
+      "美女トレーナーと実際の",
       "トレーニングを行い",
       "LIXAの良さを体感",
     ]

@@ -11,7 +11,7 @@ section#feature
     .feature-section.row
       .col-12.col-lg-6.feature-box
         .feature-image
-        .feature-title 女子トレーナーが密着指導
+        .feature-title 美女トレーナーが密着指導
       .col-12.col-lg-6.feature-detail 所属トレーナーは女子のみ！正しいフォームを密着指導！女子目線でモテるカラダ作りを徹底的にアドバイスします。
     .feature-section.row
       .col-12.col-lg-6.feature-box
