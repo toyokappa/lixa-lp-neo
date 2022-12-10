@@ -57,4 +57,20 @@ section#userVoice
           font-size: 16px
         .unit
           font-size: 12px
+@media screen and (min-width: $pc-width)
+  #userVoice
+    .user-card
+      width: 600px
+      padding: 20px
+      border-radius: 5px
+      margin: 0 auto
+      .user-card-header
+        .user-icon
+          height: 60px
+          width: 60px
+        .user-info
+          .value
+            font-size: 20px
+          .unit
+            font-size: 16px
 </style>
