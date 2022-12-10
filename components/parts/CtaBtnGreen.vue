@@ -60,11 +60,13 @@
   .main-text
     font-size: 48px
     font-weight: bold
+    width: fit-content
+    margin: 0 auto
     position: relative
     .bubble-orange
       position: absolute
       top: -58px
-      left: 50px
+      left: -40px
       .bubble-image
         filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25))
         height: 50px
