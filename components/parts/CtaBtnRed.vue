@@ -106,4 +106,47 @@
       border-right-width: 5px
       border-bottom-color: black
       z-index: 1
+@media screen and (min-width: $pc-width)
+  .cta-btn-red
+    .btn-area
+      display: block
+      width: 640px
+      height: 110px
+      .btn-text
+        .emphasis-lg
+          font-size: 64px
+        .emphasis-md
+          font-size: 40px
+        .emphasis-circle
+          font-size: 20px
+          color: white
+          border: 2px white solid
+        .first-text
+          font-size: 40px
+          div
+            display: inline
+        .second-text
+          font-size: 24px
+          top: 50px
+      .instructor-photo
+        width: 100px
+        height: 100px
+        bottom: -6px
+        left: -20px
+    .bubble-area
+      font-size: 30px
+      padding: 10px 20px
+      margin: 25px 0 0
+      &:before
+        left: 22px
+        border-top-width: 10px
+        border-bottom-width: 10px
+        border-left-width: 6px
+        border-right-width: 6px
+      &:after
+        left: 20px
+        border-top-width: 14px
+        border-bottom-width: 14px
+        border-left-width: 8px
+        border-right-width: 8px
 </style>
