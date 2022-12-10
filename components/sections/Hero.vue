@@ -1,7 +1,7 @@
 <template lang="pug">
 section#hero
   .hero-area
-    .hero-image
+    img.hero-image(src="@/assets/images/hero.jpg")
     h1.main-copy
       div.copy-lg 群馬初！
       div 男性人気No.1！
@@ -20,10 +20,14 @@ section#hero
       width: 100%
       height: 300px
       background-color: $base-grey
+      object-fit: cover
+      object-position: center top
     .main-copy
+      color: white
       font-size: 20px
       font-weight: bold
       text-align: right
+      text-shadow: $text-border-black
       line-height: 1.5
       padding: 0 5px
       position: absolute

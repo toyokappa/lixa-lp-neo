@@ -10,6 +10,7 @@ section#trial
       v-for="step in stepList"
       :key="step.number"
       :stepNumber="step.number"
+      :stepImage="step.image"
       :stepTexts="step.texts"
     )
   .container.campaign-section

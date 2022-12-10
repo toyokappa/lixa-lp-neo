@@ -10,17 +10,17 @@ section#feature
   .container
     .feature-section.row
       .col-12.col-lg-6.feature-box
-        .feature-image
+        img.feature-image(src="@/assets/images/feature_1.png")
         .feature-title 美女トレーナーが密着指導
       .col-12.col-lg-6.feature-detail 所属トレーナーは女子のみ！正しいフォームを密着指導！女子目線でモテるカラダ作りを徹底的にアドバイスします。
     .feature-section.row
       .col-12.col-lg-6.feature-box
-        .feature-image
+        img.feature-image(src="@/assets/images/feature_2.jpg")
         .feature-title 個室なので気にせず通える
       .col-12.col-lg-6.feature-detail 予約制の完全個室なのでプライベートな空間で安心してご利用いただけます。感染対策もバッチリなのでご安心ください。
     .feature-section.row
       .col-12.col-lg-6.feature-box
-        .feature-image
+        img.feature-image(src="@/assets/images/feature_3.png")
         .feature-title 初心者向けのプログラムも充実
       .col-12.col-lg-6.feature-detail 筋トレを全くやったことがない！という方でも安心して通えるよう、初心者向けのプログラムもご用意しております。
 </template>
@@ -48,7 +48,10 @@ section#feature
       margin-bottom: 10px
       .feature-image
         height: 200px
+        width: 100%
         background-color: $base-grey
+        object-fit: cover
+        object-position: center center
         border: 2px solid $accent-color
       .feature-title
         font-weight: bold

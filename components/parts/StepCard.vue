@@ -2,7 +2,7 @@
 .step-card
   .step-left
     .step-number step{{ stepNumber }}
-    .step-image
+    img.step-image(:src="stepImage")
   .step-right
     .step-text
       p(v-for="text in stepTexts" :key="text") {{ text }}
@@ -11,11 +11,13 @@
 <script setup lang="ts">
 interface Props {
   stepNumber: number,
+  stepImage: string,
   stepTexts: string[],
 }
 
 const Props = withDefaults(defineProps<Props>(), {
   stepNumber: 1,
+  stepImage: '',
   stepTexts: () => [],
 })
 </script>
@@ -43,8 +45,8 @@ const Props = withDefaults(defineProps<Props>(), {
       width: 100px
       height: 80px
       background-color: $base-grey
-      background-size: cover
-      background-position: center center
+      object-fit: cover
+      object-position: center center
   .step-right
     .step-text
       font-size: 14px
