@@ -42,4 +42,14 @@ const { stepList } = constants
     margin-bottom: 40px
   .campaign-section
     margin-bottom: 30px
+@media screen and (min-width: $pc-width)
+  .caption
+    font-size: 18px
+  .emphasis-md
+    font-size: 32px
+  #trial
+    .step-section
+      width: 800px
+    .campaign-section
+      margin-bottom: 40px
 </style>

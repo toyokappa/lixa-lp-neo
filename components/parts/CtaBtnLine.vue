@@ -80,4 +80,26 @@ const trackBtnClick = () => {
         top: 70px
         right: 50%
         transform: translateX(50%)
+@media screen and (min-width: $pc-width)
+  .cta-btn-line
+    .btn-area
+      display: block
+      width: 640px
+      height: 110px
+      .btn-text
+        .emphasis-lg
+          font-size: 64px
+        .emphasis-md
+          font-size: 40px
+        .emphasis-circle
+          font-size: 20px
+          color: white
+          border: 2px white solid
+        .first-text
+          font-size: 40px
+          div
+            display: inline
+        .second-text
+          font-size: 24px
+          top: 50px
 </style>

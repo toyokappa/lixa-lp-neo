@@ -190,4 +190,14 @@ https://${$config.public.domain}
     padding: 10px
     &:disabled
       background: lightgrey 
+@media screen and (min-width: $pc-width)
+  #reserveForm
+    .reserve-description
+      font-size: 18px
+    form
+      width: 600px
+      margin: 0 auto
+      .policy-link
+        color: $accent-color
+        text-decoration: none
 </style>
