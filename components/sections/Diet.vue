@@ -168,4 +168,40 @@ section#diet
       margin-bottom: 15px
     .conclusion-detail
       font-size: 14px
+@media screen and (min-width: $pc-width)
+  #diet
+    .section-catch
+      padding-top: 30px
+      margin-bottom: 30px
+      .catch-image
+        height: 240px
+      .catch-text
+        .catch-title
+          font-size: 32px
+        .catch-description
+          font-size: 20px
+    .section-title
+      font-size: 32px
+      margin-bottom: 30px
+    .diet-section
+      width: 800px
+      .diet-card
+        .diet-card-header
+          .diet-card-image
+            height: 400px
+      .diet-card-body
+        font-size: 20px
+    .line-section
+      width: 800px
+      .line-title
+        font-size: 28px
+      .line-description
+        font-size: 16px
+    .diet-conclusion
+      width: 800px
+      margin: 0 auto
+      .conclusion-title
+        font-size: 32px
+      .conclusion-detail
+        font-size: 20px
 </style>
