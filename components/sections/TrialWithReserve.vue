@@ -14,6 +14,7 @@ section#trial
       v-for="step in stepList"
       :key="step.number"
       :stepNumber="step.number"
+      :stepImage="step.image"
       :stepTexts="step.texts"
     )
   parts-cta-btn-line.mb-5
@@ -21,7 +22,7 @@ section#trial
 </template>
 
 <script setup lang="ts">
-import constants from "@/utils/constants"
+import constants from "~~/utils/constants"
 
 const { stepList } = constants
 </script>
