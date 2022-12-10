@@ -168,4 +168,59 @@
       .text
         font-size: 14px
         font-weight: bold
+@media screen and (min-width: $pc-width)
+  .cta-btn-green
+    padding: 100px 0 30px
+    .main-text
+      font-size: 64px
+      .bubble-orange
+        top: -85px
+        left: -55px
+        .bubble-image
+          height: 80px
+        .bubble-text
+          font-size: 24px
+          top: 34px
+    .bubble-area
+      .bubble-white
+        position: relative
+        z-index: 1
+        &:nth-child(2)
+          margin: 0 10px
+        .bubble-image
+          width: 160px
+        .bubble-text
+          font-size: 16px
+          bottom: 15px
+          left: 50%
+    .btn-box
+      width: 600px
+      padding: 45px 0 20px
+      .btn-area
+        width: 540px
+        padding: 8px 10px
+        border-radius: 56px
+        .first-text
+          font-size: 24px
+          .emphasis-yellow
+            font-size: 40px
+        .second-text
+          font-size: 24px
+          height: 90px
+          padding: 8px
+          border-radius: 45px
+          .emphasis-circle
+            width: 60px
+            height: 60px
+          .emphasis-md
+            font-size: 40px
+        .triangle-right
+          height: 18px
+          border: 18px solid transparent
+          border-left: 18px solid white
+      .check-list
+        .check
+          height: 24px
+        .text
+          font-size: 24px
 </style>
