@@ -58,6 +58,8 @@ section#userVoice
         .unit
           font-size: 12px
 @media screen and (min-width: $pc-width)
+  .emphasis-md
+    font-size: 32px
   #userVoice
     .user-card
       width: 600px
