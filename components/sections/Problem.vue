@@ -216,7 +216,7 @@ section#problem
     .but
       font-size: 48px
     .bubble-desires
-      width: 800px
+      width: 600px
       font-size: 20px
       margin: 0 auto 20px
       .bubble-1
