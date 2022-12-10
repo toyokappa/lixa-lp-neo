@@ -1,18 +1,18 @@
 <template lang="pug">
 section#program
   .section-title
-    p 無料体験後の
+    p.emphasis-sm 無料体験後の
     p.emphasis-md 正規会員への入会は
     p.emphasis-md シンプルプライス
   .price-section
     table
       tr
-        td 入会金
+        td.emphasis-sm 入会金
         td.price
           span.emphasis-lg.emphasis-red 40,000
           span 円(税込)
       tr
-        td 2ヶ月コース
+        td.emphasis-sm 2ヶ月コース
         td.price
           span.emphasis-lg.emphasis-red 192,000
           span 円(税込)
@@ -27,7 +27,7 @@ section#program
       span を作りましょう！
   .next-program
     .next-title 更にその先へ...
-    .next-description
+    .emphasis-sm
       p 2ヶ月コースを無事に終了した方に向けて
       p 特別な専用コースもご用意しております。
 </template>
@@ -65,4 +65,23 @@ section#program
     .next-title
       font-size: 20px
       margin-bottom: 10px
+@media screen and (min-width: $pc-width)
+  #program
+    .emphasis-sm
+      font-size: 20px
+    .emphasis-md
+      font-size: 28px
+    .emphasis-lg
+      font-size: 48px
+    .price-section
+      padding: 0 20px
+      margin-bottom: 30px
+      table
+        width: 420px
+        margin: 0 auto
+    .proposal
+      font-size: 24px
+    .next-program
+      .next-title
+        font-size: 32px
 </style>
