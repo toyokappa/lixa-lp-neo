@@ -70,5 +70,5 @@ export default defineNuxtConfig({
     options: {
       strict: true
     }
-  }
+  },
 })

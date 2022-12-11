@@ -65,8 +65,6 @@ section#reserveForm
 <script setup lang="ts">
 import { useField, useForm, configure } from "vee-validate"
 import { localize } from "@vee-validate/i18n"
-// @ts-ignore
-import { createToaster } from "@meforma/vue-toaster"
 
 const { meta } = useForm()
 const { value: name, errorMessage: nameError } = useField(
@@ -98,7 +96,6 @@ configure({
 
 const $config = useRuntimeConfig()
 const $router = useRouter()
-const toaster = createToaster()
 const formClicked = ref(false)
 const data = reactive({
   formClicked
@@ -156,7 +153,7 @@ https://${$config.public.domain}
     })
     $router.push("/reserve/complete")
   } catch (err) {
-    toaster.show('申し込み中にエラーが発生しました。もう一度お試しください。', { type: 'error ' })
+    $router.push("/reserve/error")
     throw err
   } finally {
     // ローディング終了
