@@ -11,3 +11,13 @@ sections-program
 sections-trial
 sections-gym-info
 </template>
+
+<script setup lang="ts">
+useHead({
+  // afimaのトラッキングタグ
+  script: [
+    { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
+    { children: 'aAS();' }
+  ]
+})
+</script>

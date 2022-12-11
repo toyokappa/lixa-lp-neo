@@ -14,6 +14,16 @@
   nuxt-link.back-link(to="/") トップページへ戻る
 </template>
 
+<script setup lang="ts">
+useHead({
+  // afimaのCVタグ
+  script: [
+    { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
+    { children: 'cCV(942, 0, "");' }
+  ]
+})
+</script>
+
 <style lang="sass" scoped>
 .complete
   text-align: center
