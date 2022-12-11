@@ -190,8 +190,7 @@ section#problem
       height: 165px
       margin-top: 20px
       img
-        height: 260px
-        width: auto
+        width: 100%
 
 @media screen and (min-width: $pc-width)
   #problem

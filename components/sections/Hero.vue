@@ -37,7 +37,7 @@ section#hero
         font-size: 32px
     @media (min-width: $pc-width)
       .hero-image
-        height: 640px
+        height: 720px
       .main-copy
         font-size: 36px
         text-align: left

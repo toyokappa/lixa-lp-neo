@@ -15,6 +15,7 @@
             span.emphasis-md 30
             span 秒で完了！
     .instructor-photo
+      img(src="@/assets/images/button_woman.png")
   .bubble-area
     .bubble-text 無理な勧誘は一切ナシ！相談だけでもOK！
 </template>
@@ -76,6 +77,12 @@
       position: absolute
       bottom: -8px
       left: -8px
+      img
+        width: 90px
+        height: auto
+        position: absolute
+        bottom: 0
+        right: -5px
   .bubble-area
     font-size: 15px
     font-weight: bold
@@ -133,6 +140,12 @@
         height: 100px
         bottom: -6px
         left: -20px
+        img
+          width: 130px
+          height: auto
+          position: absolute
+          bottom: 0
+          right: -6px
     .bubble-area
       font-size: 30px
       padding: 10px 20px
