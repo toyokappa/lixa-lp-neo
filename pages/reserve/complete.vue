@@ -21,7 +21,7 @@ useHead({
   // afimaのCVタグ
   script: [
     { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
-    { children: `cCV(942, 0, "${$route.params.uuid}");` }
+    { children: `cCV(942, 0, "${$route.query.uuid}");` }
   ]
 })
 </script>
