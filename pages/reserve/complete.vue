@@ -15,11 +15,13 @@
 </template>
 
 <script setup lang="ts">
+const $route = useRoute()
+
 useHead({
   // afimaのCVタグ
   script: [
     { src: "https://storage.googleapis.com/afima_media/js/afima.js" },
-    { children: 'cCV(942, 0, "");' }
+    { children: `cCV(942, 0, "${$route.params.uuid}");` }
   ]
 })
 </script>

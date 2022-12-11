@@ -111,6 +111,8 @@ watch(formClicked, () => {
 
 const sendMail = async () => {
   // loading
+  const uuid = Math.random().toString(32).substring(2)
+
   const text = `
 以下の内容でホームページより無料体験申込を受け付けました。
 入力いただいた内容をもとに担当からご連絡いたしますので今しばらくお待ち下さい。
@@ -124,6 +126,9 @@ ${email.value}
 
 # ご質問など
 ${message.value || ''}
+
+# お問い合わせ番号
+${uuid}
 ---
 
 引き続き${$config.public.projectName}をよろしくお願いいたします！
@@ -151,7 +156,7 @@ https://${$config.public.domain}
       body: formData,
       headers: { Authorization: 'Basic ' + btoa(`api:${$config.public.mailgunKey}`) }
     })
-    $router.push("/reserve/complete")
+    $router.push(`/reserve/complete?uuid=${uuid}`)
   } catch (err) {
     $router.push("/reserve/error")
     throw err
