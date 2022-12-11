@@ -3,9 +3,9 @@
   .campaign-card-text
     p.emphasis-md.mb-2 LIXAグランドオープン記念！
     p
-      span.emphasis-md 2022
+      span.emphasis-md 2023
       span 年
-      span.emphasis-md 12
+      span.emphasis-md 1
       span 月末までに
     p 無料体験ご参加の方へ
     p.emphasis-md
