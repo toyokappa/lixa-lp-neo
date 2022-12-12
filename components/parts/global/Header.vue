@@ -1,14 +1,13 @@
 <template lang="pug">
 header.header-nav.navbar
   nav.container
-    nuxt-link.navbar-bland.logo(to="/") LIXA
+    nuxt-link.navbar-bland(to="/")
+      img.logo(src="@/assets/images/logo-vertical-red.png" alt="美女ジムLIXA")
 </template>
 
 <style lang="sass" scoped>
 header
   .logo
-    font-size: 32px
-    font-weight: bold
-    color: $accent-color
-    text-decoration: none
+    height: 40px
+    width: auto
 </style>
