@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /reserve/complete
+Disallow: /reserve/error
+
+Sitemap: https://lixa.jp/sitemap.xml
