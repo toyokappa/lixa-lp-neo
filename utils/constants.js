@@ -1,6 +1,6 @@
 import trial1 from "@/assets/images/trial_1.jpg"
-import trial2 from "@/assets/images/trial_2.jpeg"
-import trial3 from "@/assets/images/trial_3.png"
+import trial2 from "@/assets/images/trial_2.jpg"
+import trial3 from "@/assets/images/trial_3.jpg"
 
 const stepList = [
   {
