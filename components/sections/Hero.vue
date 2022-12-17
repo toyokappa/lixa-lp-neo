@@ -1,11 +1,14 @@
 <template lang="pug">
 section#hero
   .hero-area
-    img.hero-image(src="@/assets/images/hero.jpg")
+    video.hero-image(playsinline muted autoplay loop poster="@/assets/images/hero.jpg")
+      source(src="@/assets/videos/hero.mp4" type="video/mp4")
     h1.main-copy
-      div.copy-lg 群馬初！
+      //- div.copy-lg 群馬初！
       div 男性人気No.1！
-      div 美女が教えるパーソナルジム
+      div
+        span.emphasis-red 美女が教える
+        span パーソナルジム
       div 前橋下石倉にグランドオープン！
   parts-cta-btn-red
 </template>
@@ -13,12 +16,14 @@ section#hero
 <style lang="sass" scoped>
 #hero
   padding-bottom: 30px
+  .emphasis-red
+    color: $accent-color
   .hero-area
     position: relative
     margin-bottom: 36px
     .hero-image
       width: 100%
-      height: 300px
+      aspect-ratio: 4/3
       background-color: $base-grey
       object-fit: cover
       object-position: center top
@@ -27,7 +32,7 @@ section#hero
       font-size: 20px
       font-weight: bold
       text-align: right
-      text-shadow: $text-border-black
+      text-shadow: 2px 2px black
       line-height: 1.5
       padding: 0 5px
       position: absolute
@@ -37,12 +42,14 @@ section#hero
         font-size: 32px
     @media (min-width: $pc-width)
       .hero-image
-        height: 720px
+        height: calc(100vh - 56px) // ヘッダー分
+        aspect-ratio: 16/9
       .main-copy
-        font-size: 36px
+        font-size: 48px
         text-align: left
-        top: 0
-        left: 0
+        text-shadow: 3px 3px black
+        top: 10px
+        left: 10px
         .copy-lg
           font-size: 54px
 </style>
