@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /reserve/complete
 Disallow: /reserve/error
 
