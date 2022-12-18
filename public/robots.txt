@@ -1,6 +1,3 @@
 User-agent: *
-Allow: /
-Disallow: /reserve/complete
-Disallow: /reserve/error
 
 Sitemap: https://lixa.jp/sitemap.xml
